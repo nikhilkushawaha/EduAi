@@ -36,10 +36,10 @@ const LearningDetails = async ({ params }: RouteParams) => {
               height={40}
               className="rounded-full object-cover size-[40px]"
             />
-            <h3 className="capitalize">{learn.background} Learned</h3>
+            <h3 className="capitalize">{learn.background}</h3>
           </div>
 
-          <DisplayTechIcons techStack={learn.techstack} />
+          {/* <DisplayTechIcons techStack={learn.techstack} /> */}
         </div>
 
         <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit">{learn.type}</p>

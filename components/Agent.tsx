@@ -148,19 +148,19 @@ const Agent = ({
   return (
     <>
       <div className="call-view">
-        {/* AI Learninger Card */}
+        {/* AI Tutor Card */}
         <div className="card-learner">
           <div className="avatar">
             <Image
-              src="/ai-avatar.png"
+              src="/chatbot.gif"
               alt="profile-image"
-              width={65}
-              height={54}
+              width={200}
+              height={200}
               className="object-cover"
             />
             {isSpeaking && <span className="animate-speak" />}
           </div>
-          <h3>AI Learninger</h3>
+          <h3>AI Tutor</h3>
         </div>
 
         {/* User Profile Card */}

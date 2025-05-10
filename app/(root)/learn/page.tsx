@@ -6,7 +6,7 @@ const Page = async () => {
 
   return (
     <>
-      <h3>Learned generation</h3>
+      <h3>Topic Discussion</h3>
 
       <Agent userName={user?.name!} userId={user?.id} type="generate" />
     </>

@@ -19,7 +19,6 @@ interface Learned {
   topic: string;
   level: string;
   questions: string[];
-  techstack: string[];
   createdAt: string;
   userId: string;
   type: string;

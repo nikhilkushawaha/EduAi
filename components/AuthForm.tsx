@@ -98,14 +98,14 @@ const AuthForm = ({ type }: { type: FormType }) => {
   const isSignIn = type === "sign-in";
 
   return (
-    <div className="card-border lg:min-w-[566px]">
+    <div className="card-border opacity-90 lg:min-w-[550px]">
       <div className="flex flex-col gap-6 card py-14 px-10">
         <div className="flex flex-row gap-2 justify-center">
-          <Image src="/logo.svg" alt="logo" height={32} width={38} />
-          <h2 className="text-primary-100">EduAi</h2>
+          <Image src="/logo.png" alt="logo" height={32} width={38} />
+          <h2 className="text-amber-500">EduAi</h2>
         </div>
 
-        <h3>Practice job learns with AI</h3>
+        <h3>Learn with AI</h3>
 
         <Form {...form}>
           <form

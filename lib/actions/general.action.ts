@@ -23,7 +23,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
       }),
       schema: feedbackSchema,
       prompt: `
-        You are an AI learner analyzing a mock learn. Your task is to evaluate the candidate based on structured categories. Be thorough and detailed in your analysis. Don't be lenient with the candidate. If there are mistakes or areas for improvement, point them out.
+        You are an AI Tutor analyzing the mock questions. Your task is to evaluate the candidate based on structured categories. Be thorough and detailed in your analysis. Don't be lenient with the candidate. If there are mistakes or areas for improvement, point them out.
         Transcript:
         ${formattedTranscript}
 
@@ -35,7 +35,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
         - **Confidence & Clarity**: Confidence in responses, engagement, and clarity.
         `,
       system:
-        "You are a professional learner analyzing a mock learn. Your task is to evaluate the candidate based on structured categories",
+        "You are a professional tutor analyzing a mock preparation. Your task is to evaluate the candidate based on structured categories",
     });
 
     const feedback = {

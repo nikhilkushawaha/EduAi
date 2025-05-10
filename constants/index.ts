@@ -98,7 +98,7 @@ export const mappings = {
 };
 
 export const learner: CreateAssistantDTO = {
-  name: "Learninger",
+  name: "Teaching Assistant",
   firstMessage:
     "Hello! Thank you for taking the time to speak with me today. I'm excited to learn more about you and your experience.",
   transcriber: {
@@ -121,7 +121,7 @@ export const learner: CreateAssistantDTO = {
     messages: [
       {
         role: "system",
-        content: `You are a professional job learner conducting a real-time voice learn with a candidate. Your goal is to assess their qualifications, motivation, and fit for the role.
+        content: `You are a professional tutor conducting a real-time voice interaction with a candidate. Your goal is to assess their qualifications, motivation, and preperation level of the topic.
 
 Learned Guidelines:
 Follow the structured question flow:
@@ -211,7 +211,6 @@ export const dummyLearnings: Learned[] = [
     background: "Frontend Developer",
     topic: "React",
     type: "Technical",
-    techstack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     level: "Junior",
     questions: ["What is React?"],
     finalized: false,
@@ -223,7 +222,6 @@ export const dummyLearnings: Learned[] = [
     background: "Full Stack Developer",
     topic: "Node.js",
     type: "Mixed",
-    techstack: ["Node.js", "Express", "MongoDB", "React"],
     level: "Senior",
     questions: ["What is Node.js?"],
     finalized: false,
