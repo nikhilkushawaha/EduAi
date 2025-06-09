@@ -15,7 +15,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
     <div className="root-layout">
       <nav className="flex items-center justify-between px-4 py-2 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="EduAi Logo" width={38} height={32} />
+          <Image src="/logo.png" alt="EduAi" width={38} height={32} />
           <h2 className="text-amber-500">EduAi✨</h2>
         </Link>
         <div className="ml-auto">

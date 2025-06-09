@@ -149,8 +149,8 @@ const Agent = ({
     <>
       <div className="call-view">
         {/* AI Tutor Card */}
-        <div className="card-learner">
-          <div className="avatar">
+        <div className="card-learner relative flex flex-col justify-between items-center">
+          <div className="avatar absolute top-20">
             <Image
               src="/chatbot.gif"
               alt="profile-image"
@@ -160,7 +160,36 @@ const Agent = ({
             />
             {isSpeaking && <span className="animate-speak" />}
           </div>
-          <h3>AI Tutor</h3>
+          <h3 className="mt-50 text-lg font-semibold">AI Tutor</h3>
+
+          <div className="w-full flex justify-center mt-auto">
+            {callStatus !== "ACTIVE" ? (
+              <button
+                className="relative btn-call"
+                onClick={() => handleCall()}
+              >
+                <span
+                  className={cn(
+                    "absolute animate-ping rounded-full opacity-75",
+                    callStatus !== "CONNECTING" && "hidden"
+                  )}
+                />
+
+                <span className="relative">
+                  {callStatus === "INACTIVE" || callStatus === "FINISHED"
+                    ? "Call"
+                    : ". . ."}
+                </span>
+              </button>
+            ) : (
+              <button
+                className="btn-disconnect"
+                onClick={() => handleDisconnect()}
+              >
+                End
+              </button>
+            )}
+          </div>
         </div>
 
         {/* User Profile Card */}
@@ -193,29 +222,6 @@ const Agent = ({
           </div>
         </div>
       )}
-
-      <div className="w-full flex justify-center">
-        {callStatus !== "ACTIVE" ? (
-          <button className="relative btn-call" onClick={() => handleCall()}>
-            <span
-              className={cn(
-                "absolute animate-ping rounded-full opacity-75",
-                callStatus !== "CONNECTING" && "hidden"
-              )}
-            />
-
-            <span className="relative">
-              {callStatus === "INACTIVE" || callStatus === "FINISHED"
-                ? "Call"
-                : ". . ."}
-            </span>
-          </button>
-        ) : (
-          <button className="btn-disconnect" onClick={() => handleDisconnect()}>
-            End
-          </button>
-        )}
-      </div>
     </>
   );
 };
