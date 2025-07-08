@@ -10,14 +10,14 @@ export async function POST(request: Request) {
 
   try {
     const { text: questions } = await generateText({
-      model: google("gemini-2.0-flash-001"),
+      model: google("gemini-2.0-flash"),
       prompt: `You are an AI tutor helping a student learn a specific topic.
         The student's background is: ${background}. 
         They want to learn about: ${topic}.
         The questions should be ${level} level.
         The focus between behavioural and technical questions should lean towards: ${type}.
         The amount of questions required is: ${amount}.
-        Please return only the questions, without any additional text.
+        Please return only the questions, without any additional text, and please do not ask for any input.
         The questions are going to be read by a voice assistant so do not use "/" or "*" or any other special characters which might break the voice assistant.
         Return the questions formatted like this:
         ["Question 1", "Question 2", "Question 3"]
@@ -27,10 +27,10 @@ export async function POST(request: Request) {
     });
 
     const learn = {
-      type: type,
       background: background,
       topic: topic,
       level: level,
+      type: type,
       questions: JSON.parse(questions),
       userId: userid,
       finalized: true,

@@ -141,9 +141,9 @@ Answer the candidate’s questions professionally:
 If asked about the role, company, or expectations, provide a clear and relevant answer.
 If unsure, redirect the candidate to HR for more details.
 
-Conclude the learn properly:
+Conclude the topic properly:
 Thank the candidate for their time.
-Inform them that the company will reach out soon with feedback.
+Inform them that the you will reach out soon with feedback.
 End the conversation on a polite and positive note.
 
 

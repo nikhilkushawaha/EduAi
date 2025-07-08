@@ -329,7 +329,7 @@
 }
 
 @utility pattern {
-  @apply bg-[url('/background.png')] h-screen w-screen bg-center bg-cover bg-no-repeat;
+  @apply bg-[url('/background.png')] h-screen w-screen bg-center bg-cover bg-no-repeat bg-fixed;
 }
 
 @utility blue-gradient-dark {

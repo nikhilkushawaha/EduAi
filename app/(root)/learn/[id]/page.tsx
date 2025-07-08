@@ -2,7 +2,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 import Agent from "@/components/Agent";
-import { getRandomLearningCover } from "@/lib/utils";
+import { getRandomLearningCover, getInitials, getRandomTailwindColor} from "@/lib/utils";
 
 import {
   getFeedbackByLearningId,
@@ -24,22 +24,21 @@ const LearningDetails = async ({ params }: RouteParams) => {
     userId: user?.id!,
   });
 
+    const initials = getInitials(learn.background);
+    const { bg, text } = getRandomTailwindColor();
+
   return (
     <>
       <div className="flex flex-row gap-4 justify-between">
         <div className="flex flex-row gap-4 items-center max-sm:flex-col">
           <div className="flex flex-row gap-4 items-center">
-            <Image
-              src={getRandomLearningCover()}
-              alt="cover-image"
-              width={40}
-              height={40}
-              className="rounded-full object-cover size-[40px]"
-            />
+            <div
+            className={`w-12 h-12 rounded-full border-2 border-gray-500 font-bold flex items-center justify-center shadow-2xl hover:shadow-lg transition ${bg} ${text}`}
+          >
+            {initials}
+          </div>
             <h3 className="capitalize">{learn.background}</h3>
           </div>
-
-          {/* <DisplayTechIcons techStack={learn.techstack} /> */}
         </div>
 
         <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit">{learn.type}</p>

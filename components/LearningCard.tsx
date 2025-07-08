@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import dayjs from "dayjs";
 import Link from "next/link";
 import Image from "next/image";
@@ -5,7 +6,11 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import DisplayTechIcons from "./DisplayTechIcons";
 
-import { cn, getRandomLearningCover } from "@/lib/utils";
+import {
+  cn,
+  getInitials,
+  getRandomTailwindColor,
+} from "@/lib/utils";
 import { getFeedbackByLearningId } from "@/lib/actions/general.action";
 
 const LearningCard = async ({
@@ -28,6 +33,9 @@ const LearningCard = async ({
     feedback?.createdAt || createdAt || Date.now()
   ).format("MMM D, YYYY");
 
+  const initials = getInitials(topic);
+  const { bg, text } = getRandomTailwindColor();
+
   return (
     <div className="card-border w-[360px] max-sm:w-full min-h-96">
       <div className="card-learn">
@@ -42,13 +50,11 @@ const LearningCard = async ({
           </div>
 
           {/* Cover Image */}
-          <Image
-            src={getRandomLearningCover()}
-            alt="cover-image"
-            width={90}
-            height={90}
-            className="rounded-full object-fit size-[90px]"
-          />
+          <div
+            className={`w-12 h-12 rounded-full border-2 border-gray-500 font-bold flex items-center justify-center shadow-2xl hover:shadow-lg transition ${bg} ${text}`}
+          >
+            {initials}
+          </div>
 
           {/* Learned Role */}
           <h3 className="mt-5 capitalize">{topic}</h3>

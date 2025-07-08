@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import LearningCard from "@/components/LearningCard";
+import Hero from "@/components/Hero";
 
 import { getCurrentUser } from "@/lib/actions/auth.action";
 import {
@@ -23,24 +24,7 @@ async function Home() {
 
   return (
     <>
-      <section className="glass-card">
-        <div className="flex flex-col gap-6 max-w-lg">
-          <h2>Up Your Skills to Advance Your Carrier Path</h2>
-          <p className="text-lg">Learn the topic & get your instant feedback</p>
-
-          <Button asChild className="btn-primary max-sm:w-full">
-            <Link href="/learn">Start Learning</Link>
-          </Button>
-        </div>
-
-        {/* <Image
-          src="/robot.png"
-          alt="robo-dude"
-          width={400}
-          height={400}
-          className="max-sm:hidden"
-        /> */}
-      </section>
+    <Hero />
 
       <section className="glass-card flex flex-col gap-6 mt-8">
         <h2>Your Learning</h2>
@@ -66,7 +50,7 @@ async function Home() {
       </section>
 
       <section className="flex flex-col gap-6 mt-8">
-        <h2>Learned Topics</h2>
+        <h2>Continue Learning With</h2>
 
         <div className="learns-section">
           {hasUpcomingLearnings ? (
@@ -83,7 +67,7 @@ async function Home() {
               />
             ))
           ) : (
-            <p>There are no learned topics</p>
+            <p>Start your learning jurney now.</p>
           )}
         </div>
       </section>
